@@ -12,3 +12,7 @@
 
 *.iml
 *.idea
+
+# src files #
+src/TestClassNotToBeCommitted.java
+out/
