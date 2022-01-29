@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class Time {
     private String hour;
     private String minute;
@@ -23,6 +25,18 @@ public class Time {
                 timeString.split(",")[0].split(":")[1],
                 timeString.split(",")[0].split(":")[2],
                 timeString.split(",")[1]);
+    }
+
+    /**
+     * This method validates the format and validity of the entered time
+     *
+     * @param time
+     * @throws RuntimeException
+     */
+    public static void validateTime(String time) throws RuntimeException{
+        if(!Pattern.matches("[0-2][0-3]:[0-5][0-9]:[0-5][0-9],[0-9][0-9][0-9]",time)){
+            throw new RuntimeException("Entered time string is not in the proper hh:mm:ss,ms format");
+        }
     }
 
     @Override
