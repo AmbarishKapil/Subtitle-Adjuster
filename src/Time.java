@@ -37,6 +37,12 @@ public class Time {
         if(!Pattern.matches("[0-2][0-3]:[0-5][0-9]:[0-5][0-9],[0-9][0-9][0-9]",time)){
             throw new RuntimeException("Entered time string is not in the proper hh:mm:ss,ms format");
         }
+
+        // Checking if offset is more than 5 minutes
+        if(Integer.parseInt(time.split(",")[0].split(":")[0]) > 0 ||
+        Integer.parseInt(time.split(",")[0].split(":")[1]) > 5){
+            throw new RuntimeException("Offset cannot be more than 5 minutes");
+        }
     }
 
     @Override

@@ -16,3 +16,4 @@
 # src files #
 src/TestClassNotToBeCommitted.java
 out/
+src/*.srt
